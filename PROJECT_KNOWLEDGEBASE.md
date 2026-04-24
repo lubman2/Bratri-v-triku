@@ -20,8 +20,10 @@ Statická prezentační webová stránka založená na jedné dlouhé rešerši 
 ## UX a obsahová rozhodnutí pro web
 
 - Web zůstává čistě statický: `index.html` + `styles.css`.
-- Informační architektura je rozdělena na milníky, etapy, vybraná díla, provozní infrastrukturu, ocenění a zdroje.
-- Detailní filmografie zůstává v Markdown rešerši a není plně přepisovaná na landing page, aby stránka zůstala čitelná.
+- Informační architektura je rozdělena na historii, milníky, etapy, osobnosti, výrobu, vybraná díla, ocenění, kompletní filmografii a zdroje.
+- Stránka má lehčí a kompaktnější vizuální směr než první verze: světlejší plocha, menší bloky, méně dekorativní hutnost.
+- Klíčové osobnosti mají být uváděny s profesí a konkrétním přínosem pro studio.
+- Kompletní veřejně doložená filmografie je vypsaná přímo na stránce po letech.
 
 ## Deployment rozhodnutí
 

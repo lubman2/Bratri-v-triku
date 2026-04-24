@@ -1,0 +1,369 @@
+:root {
+  --bg: #f3efe5;
+  --bg-strong: #e6dcc3;
+  --card: rgba(255, 251, 244, 0.78);
+  --ink: #1b1b18;
+  --muted: #5c574d;
+  --line: rgba(27, 27, 24, 0.12);
+  --accent: #b7472a;
+  --accent-dark: #7f2814;
+  --shadow: 0 24px 80px rgba(58, 38, 18, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(183, 71, 42, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(39, 92, 77, 0.16), transparent 22%),
+    linear-gradient(180deg, #f7f2e8 0%, var(--bg) 48%, #ebe0cc 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(27, 27, 24, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 27, 24, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at center, black, transparent 78%);
+}
+
+.page-shell {
+  width: min(1160px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.25rem 0 4rem;
+}
+
+.hero,
+.section,
+.note {
+  backdrop-filter: blur(10px);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.35fr 0.9fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  min-height: 70vh;
+  padding: 2rem 0 1rem;
+}
+
+.hero__copy,
+.hero__panel,
+.section,
+.note {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.hero__copy {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero__panel {
+  padding: 2rem;
+  background:
+    linear-gradient(160deg, rgba(27, 27, 24, 0.94), rgba(72, 50, 29, 0.88)),
+    var(--card);
+  color: #f6f0e2;
+}
+
+.eyebrow,
+.panel__label,
+.timeline__year,
+.work span {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fraunces", serif;
+  line-height: 0.95;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(3.6rem, 8vw, 7rem);
+  margin-top: 0.6rem;
+}
+
+h2 {
+  font-size: clamp(2rem, 3vw, 3.25rem);
+  margin-bottom: 0.85rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+}
+
+.hero__lede {
+  max-width: 52ch;
+  font-size: 1.15rem;
+  margin-top: 1.3rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.8rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button--primary {
+  background: var(--accent);
+  color: #fff6ef;
+  border-color: transparent;
+}
+
+.button--ghost {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.facts {
+  display: grid;
+  gap: 1.25rem;
+  margin: 1.5rem 0 0;
+}
+
+.facts div {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 240, 214, 0.14);
+}
+
+.facts div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.facts dt {
+  color: rgba(246, 240, 226, 0.72);
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.facts dd {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.section {
+  margin-top: 1.5rem;
+  padding: 2rem;
+}
+
+.section--grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.4fr;
+  gap: 1.5rem;
+}
+
+.section--feature,
+.section--split,
+.section--note {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+}
+
+.section__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.timeline,
+.cards,
+.works,
+.awards,
+.sources,
+.pill-grid,
+.note {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.timeline__item,
+.card,
+.work,
+.award,
+.note {
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 250, 242, 0.9);
+}
+
+.timeline__year,
+.work span {
+  display: inline-block;
+  color: var(--accent-dark);
+  margin-bottom: 0.7rem;
+}
+
+.cards--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card__title {
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+
+.works {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.section--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.pill-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pill-grid span {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.85);
+  font-weight: 700;
+}
+
+.awards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.note {
+  padding: 2rem;
+  background:
+    linear-gradient(145deg, rgba(183, 71, 42, 0.9), rgba(127, 40, 20, 0.9)),
+    rgba(255, 250, 242, 0.95);
+}
+
+.note p,
+.note h2,
+.note .eyebrow {
+  color: #fff6ef;
+}
+
+.sources a {
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--ink);
+  background: rgba(255, 250, 242, 0.85);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button:hover,
+.sources a:hover {
+  transform: translateY(-1px);
+}
+
+.button,
+.sources a {
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+@media (max-width: 1000px) {
+  .hero,
+  .section--grid,
+  .section--split,
+  .cards--four,
+  .works,
+  .awards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    width: min(100% - 1rem, 100%);
+  }
+
+  .hero,
+  .section--grid,
+  .section--split,
+  .timeline,
+  .cards--four,
+  .works,
+  .awards,
+  .pill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 0.5rem;
+  }
+
+  .hero__copy,
+  .hero__panel,
+  .section,
+  .note {
+    border-radius: 22px;
+  }
+
+  .hero__copy,
+  .hero__panel,
+  .section {
+    padding: 1.35rem;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 18vw, 4.3rem);
+  }
+}

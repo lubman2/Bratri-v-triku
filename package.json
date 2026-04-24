@@ -1,0 +1,9 @@
+{
+  "name": "bratri-v-triku",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Staticky web nad rešerší studia Bratři v triku.",
+  "scripts": {
+    "check": "node -e \"const fs=require('fs');['index.html','styles.css','vercel.json','Bratri_v_triku_research.md'].forEach((file)=>{if(!fs.existsSync(file)){throw new Error('Missing '+file)}});console.log('Static site files present.')\""
+  }
+}
